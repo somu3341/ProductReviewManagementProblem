@@ -11,7 +11,7 @@ namespace ProductReviewManagementProblem
             while (flag)
             {
                 
-                Console.WriteLine("Choose Option to Perform Opearation\n1.Create Product Review Data\n2.Retrieve Top 3 Records\n3.Retrieve All Records\n4.Retrieve Count of Review for Each Product \n5.Exit");
+                Console.WriteLine("Choose Option to Perform Opearation\n1.Create Product Review Data\n2.Retrieve Top 3 Records\n3.Retrieve All Records\n4.Retrieve Count of Review for Each Product\n5.Retrieve ProductId and Review For All Records \n6.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 Operation operation = new Operation();
                 switch (option)
@@ -59,6 +59,9 @@ namespace ProductReviewManagementProblem
                             operation.RetrieveCountWrtUseId(list);
                         break;
                         case 5:
+                            operation.RetrieveProductIdAndReviewForAllRecords(list);
+                        break;
+                        case 6:
                         flag = false;
                         break;
                 }

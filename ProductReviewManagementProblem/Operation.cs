@@ -29,7 +29,15 @@ namespace ProductReviewManagementProblem
             var result = list.GroupBy(x => x.UserId).Select(x => new { UserId = x.Key, Count = x.Count() });
             foreach (var data in result)
             {
-                Console.WriteLine("User Id:-" + data.UserId+"   " +"Group Count:-"+data.Count);
+                Console.WriteLine("User Id:-" + data.UserId+" " +"Group Count:-"+data.Count);
+            }
+        }
+        public void RetrieveProductIdAndReviewForAllRecords(List<ProductReview> list)
+        {
+            var result = list.Where(x => x.ProductId > 0 && (x.Review == "Good" || x.Review == "Worst" || x.Review == "Average" || x.Review == "BAverage"));
+            foreach (var data in result)
+            {
+                Console.WriteLine("Product Id:-"+data.ProductId+" "+"Review:-"+data.Review);
             }
         }
     }

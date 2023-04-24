@@ -24,6 +24,13 @@ namespace ProductReviewManagementProblem
                 Console.WriteLine("Product Id:-"+data.ProductId + " " +"User Id:-"+ data.UserId + " " + "Ratings:-"+data.Rating + " " +"Review:-"+ data.Review + " " + "IsLikeFiels:-"+data.IsLike);
             }
         }
-
+        public void RetrieveCountWrtUseId(List<ProductReview> list)
+        {
+            var result = list.GroupBy(x => x.UserId).Select(x => new { UserId = x.Key, Count = x.Count() });
+            foreach (var data in result)
+            {
+                Console.WriteLine("User Id:-" + data.UserId+"   " +"Group Count:-"+data.Count);
+            }
+        }
     }
 }

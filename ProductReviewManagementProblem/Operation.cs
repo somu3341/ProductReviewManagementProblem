@@ -13,7 +13,7 @@ namespace ProductReviewManagementProblem
             var result = list.Where(x => x.Rating == 5).Take(3);
             foreach (var data in result)
             {
-                Console.WriteLine(data.ProductId +" "+data.UserId+" "+data.Rating);
+                Console.WriteLine(data.ProductId +" "+data.UserId+" "+data.Rating+" "+data.Review+" "+data.IsLike);
             }
         }
     }

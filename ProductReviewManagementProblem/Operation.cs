@@ -32,6 +32,7 @@ namespace ProductReviewManagementProblem
                 Console.WriteLine("User Id:-" + data.UserId+" " +"Group Count:-"+data.Count);
             }
         }
+        //UC5 and //UC7
         public void RetrieveProductIdAndReviewForAllRecords(List<ProductReview> list)
         {
             var result = list.Where(x => x.ProductId > 0 && (x.Review == "Good" || x.Review == "Worst" || x.Review == "Average" || x.Review == "BAverage"));
@@ -40,6 +41,7 @@ namespace ProductReviewManagementProblem
                 Console.WriteLine("Product Id:-"+data.ProductId+" "+"Review:-"+data.Review);
             }
         }
+        //UC6
         public void SkipTopFiveRecords(List<ProductReview> list)
         {
             var result=list.Where(x=>x.ProductId >5).ToList();

@@ -11,8 +11,9 @@ namespace ProductReviewManagementProblem
             while (flag)
             {
                 
-                Console.WriteLine("Choose Option to Perform Opearation\n1.Create Product Review Data\n2.Retrieve Top 3 Records\n3.Exit");
+                Console.WriteLine("Choose Option to Perform Opearation\n1.Create Product Review Data\n2.Retrieve Top 3 Records\n3.Retrieve All Records\n4.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
+                Operation operation = new Operation();
                 switch (option)
                 {
                     case 1:
@@ -48,11 +49,13 @@ namespace ProductReviewManagementProblem
                             Console.WriteLine(data.ProductId + "  " + data.UserId + "  " + data.Rating + "  " + data.Review + "  " + data.IsLike);
                         }
                         break;
-                    case 2:
-                       Operation operation= new Operation();
+                    case 2:                     
                         operation.RetreiveTopRecords(list);
                         break;
-                        case 3:
+                    case 3:
+                        operation.RetrieveRecordsWrtRatingAndUserId(list);
+                        break;
+                        case 4:
                         flag = false;
                         break;
                 }

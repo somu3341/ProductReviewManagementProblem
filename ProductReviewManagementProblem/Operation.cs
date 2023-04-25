@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -97,6 +98,14 @@ namespace ProductReviewManagementProblem
                 int totalRating= result.Sum(x=>x.Rating);
                 int average=totalRating/resultCount;
                 Console.WriteLine("Average Raings {0}",average);
+            }
+        }
+        public void RetrieveRecordsContainNiceInIt(List<ProductReview>list)
+        {
+            var result = list.Where(x => x.Review == "Nice");
+            foreach(var data in result)
+            {
+                Console.WriteLine("Product Id:-" + data.ProductId + " " + "User Id:-" + data.UserId + " " + "Ratings:-" + data.Rating + " " + "Review:-" + data.Review + " " + "IsLikeFields:-" + data.IsLike);
             }
         }
     }

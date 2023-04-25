@@ -86,5 +86,18 @@ namespace ProductReviewManagementProblem
                 throw new Exception(ex.Message);
             }
         }
+        //UC9
+        public void FindAverageRatingsOfProductId(List<ProductReview> list)
+        {
+            var result = list.Where(x => x.ProductId >0 && x.Rating >= 1);
+              // var sum= list.GroupBy(x=>x.UserId). Select(x => new { UserId = x.Key, Count = x.Count() });
+            int resultCount=result.Count();
+            if(resultCount !=0)
+            {
+                int totalRating= result.Sum(x=>x.Rating);
+                int average=totalRating/resultCount;
+                Console.WriteLine("Average Raings {0}",average);
+            }
+        }
     }
 }

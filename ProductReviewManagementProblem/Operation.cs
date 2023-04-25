@@ -76,7 +76,7 @@ namespace ProductReviewManagementProblem
                             product.UserId = read.GetInt32(1);
                             product.Rating = read.GetInt32(2);
                             product.Review = read.GetString(3);
-                            product.IsLike = read.GetBoolean(4);
+                            product.IsLike = read.GetString(4);
                         }
                         Console.WriteLine("Product Id:-" + product.ProductId + " " + "User Id:-" + product.UserId + " " + "Ratings:-" + product.Rating + " " + "Review:-" + product.Review + " " + "IsLikeFields:-" + product.IsLike);
                     }
@@ -100,6 +100,7 @@ namespace ProductReviewManagementProblem
                 Console.WriteLine("Average Raings {0}",average);
             }
         }
+        //UC10
         public void RetrieveRecordsContainNiceInIt(List<ProductReview>list)
         {
             var result = list.Where(x => x.Review == "Nice");

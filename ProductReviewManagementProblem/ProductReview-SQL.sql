@@ -35,3 +35,11 @@ Insert into Product_Review(UserId,Rating,Review,IsLike) values(1,5,'Good','True'
 Insert into Product_Review(UserId,Rating,Review,IsLike) values(5,5,'Good','True');
 Insert into Product_Review(UserId,Rating,Review,IsLike) values(6,4,'Nice','True');
 Select * from Product_Review;
+--UC11
+Insert into Product_Review(UserId,Rating,Review,IsLike) values(1,5,'Good','True');
+Insert into Product_Review(UserId,Rating,Review,IsLike) values(2,2,'Baverage','True');
+Insert into Product_Review(UserId,Rating,Review,IsLike) values(1,5,'Good','True');
+Insert into Product_Review(UserId,Rating,Review,IsLike) values(5,5,'Good','True');
+Insert into Product_Review(UserId,Rating,Review,IsLike) values(6,4,'Nice','True');
+
+Select * from Product_Review where UserId=10 order by Rating;
